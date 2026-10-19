@@ -38,7 +38,7 @@ Built using Python, Flask, and HTML, the project demonstrates how machine learni
 ## 📂 Project Structure
 
 ```text
-fraud_project2/
+fraud_github/
 │
 ├── app.py
 ├── templates/
