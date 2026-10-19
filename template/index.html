@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Social Profile Checker</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(135deg, #e3f2fd, #e1f5fe);
+            text-align: center;
+            padding: 50px;
+        }
+
+        .box {
+            background: white;
+            padding: 25px;
+            width: 320px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        h1 {
+            color: #1565c0;
+        }
+
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 8px 0;
+            border: 1px solid #90caf9;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 95%;
+            padding: 10px;
+            background: #1e88e5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #loading {
+            display: none;
+            color: #1e88e5;
+        }
+    </style>
+
+    <script>
+        function showLoading() {
+            document.getElementById("loading").style.display = "block";
+        }
+    </script>
+</head>
+<body>
+
+<h1>Social Profile Checker</h1>
+<p>This tool checks basic activity to estimate profile authenticity.</p>
+
+<div class="box">
+
+<p id="loading">Analyzing profile data...</p>
+
+<form action="/predict" method="post" onsubmit="showLoading()">
+
+    <input type="number" name="followers" placeholder="Followers" min="0" required>
+    <input type="number" name="following" placeholder="Following" min="0" required>
+    <input type="number" name="posts" placeholder="Posts" min="0" required>
+
+    <button type="submit">Analyze</button>
+
+</form>
+
+</div>
+
+<p style="margin-top:20px; font-size:12px;">
+Developed by Priyanshu Giri
+</p>
+
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Fraud Detection Result</title>
+
+
+    <style>
+
+        /* =====================================================
+           GENERAL PAGE STYLING
+        ===================================================== */
+
+        * {
+
+            box-sizing: border-box;
+
+        }
+
+
+        body {
+
+            margin: 0;
+
+            padding: 30px 20px;
+
+            font-family: Arial, sans-serif;
+
+            background-color: #f4f6f8;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+        }
+
+
+        /* =====================================================
+           RESULT BOX
+        ===================================================== */
+
+        .box {
+
+            background-color: white;
+
+            width: 420px;
+
+            max-width: 100%;
+
+            padding: 35px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 4px 15px
+                rgba(0, 0, 0, 0.15);
+
+            text-align: center;
+
+        }
+
+
+        /* =====================================================
+           HEADING
+        ===================================================== */
+
+        h1 {
+
+            margin-top: 0;
+
+            margin-bottom: 25px;
+
+            color: #333;
+
+        }
+
+
+        /* =====================================================
+           RESULT MESSAGE
+        ===================================================== */
+
+        .result {
+
+            background-color: #f5f5f5;
+
+            padding: 15px;
+
+            border-radius: 8px;
+
+            margin-bottom: 25px;
+
+            color: #333;
+
+            font-size: 16px;
+
+            line-height: 1.5;
+
+        }
+
+
+        /* =====================================================
+           LABEL
+        ===================================================== */
+
+        .title {
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            margin-top: 20px;
+
+            margin-bottom: 8px;
+
+            color: #333;
+
+        }
+
+
+        /* =====================================================
+           PROGRESS BAR CONTAINER
+        ===================================================== */
+
+        .bar-container {
+
+            width: 100%;
+
+            height: 38px;
+
+            background-color: #ddd;
+
+            border-radius: 6px;
+
+            overflow: hidden;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        /* =====================================================
+           FAKE PROFILE BAR
+        ===================================================== */
+
+        .fake {
+
+            background-color: #e53935;
+
+            color: white;
+
+            height: 38px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-weight: bold;
+
+            width: 100%;
+
+        }
+
+
+        /* =====================================================
+           REAL PROFILE BAR
+        ===================================================== */
+
+        .real {
+
+            background-color: #43a047;
+
+            color: white;
+
+            height: 38px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-weight: bold;
+
+            width: 100%;
+
+        }
+
+
+        /* =====================================================
+           CHECK ANOTHER BUTTON
+        ===================================================== */
+
+        .btn {
+
+            display: inline-block;
+
+            margin-top: 10px;
+
+            padding: 10px 20px;
+
+            background-color: #1e88e5;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 6px;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+        }
+
+
+        .btn:hover {
+
+            background-color: #1565c0;
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         MAIN RESULT BOX
+    ====================================================== -->
+
+    <div class="box">
+
+
+        <!-- Heading -->
+
+        <h1>
+
+            Fraud Detection Result
+
+        </h1>
+
+
+        <!-- =================================================
+             RESULT MESSAGE
+        ================================================== -->
+
+        <div class="result">
+
+            {{ result }}
+
+        </div>
+
+
+        <!-- =================================================
+             FAKE PROBABILITY
+        ================================================== -->
+
+        <div class="title">
+
+            Fake Profile Probability
+
+        </div>
+
+
+        <div class="bar-container">
+
+
+            <div class="fake">
+
+                Fake: {{ fake_prob }}%
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             REAL PROBABILITY
+        ================================================== -->
+
+        <div class="title">
+
+            Genuine Profile Probability
+
+        </div>
+
+
+        <div class="bar-container">
+
+
+            <div class="real">
+
+                Real: {{ real_prob }}%
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             CHECK ANOTHER BUTTON
+        ================================================== -->
+
+        <a href="/" class="btn">
+
+            Check Another
+
+        </a>
+
+
+    </div>
+
+
+</body>
+
+</html>
